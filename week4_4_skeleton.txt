@@ -100,9 +100,12 @@ class MainActivity : AppCompatActivity() {
             try {
                 val num1 = edit1.text.toString().toInt()
                 val num2 = edit2.text.toString().toInt()
-                textResult.setText("계산 결과: ${num1 + num2}")
+                val result = num1 + num2
+                textResult.setText("계산 결과: ${result}")
+                edit1.setText(result.toString())
+                edit2.setText("")
             } catch (e : Exception) {
-                false
+                textResult.setText("계산 결과: ")
             }
             false
         }
@@ -112,9 +115,12 @@ class MainActivity : AppCompatActivity() {
             try {
                 val num1 = edit1.text.toString().toInt()
                 val num2 = edit2.text.toString().toInt()
-                textResult.setText("계산 결과: ${num1 - num2}")
+                val result = num1 - num2
+                textResult.setText("계산 결과: ${result}")
+                edit1.setText(result.toString())
+                edit2.setText("")
             } catch (e : Exception) {
-                false
+                textResult.setText("계산 결과: ")
             }
             false
         }
@@ -124,9 +130,12 @@ class MainActivity : AppCompatActivity() {
             try {
                 val num1 = edit1.text.toString().toInt()
                 val num2 = edit2.text.toString().toInt()
-                textResult.setText("계산 결과: ${num1 * num2}")
+                val result = num1 * num2
+                textResult.setText("계산 결과: ${result}")
+                edit1.setText(result.toString())
+                edit2.setText("")
             } catch (e : Exception) {
-                false
+                textResult.setText("계산 결과: ")
             }
             false
         }
@@ -136,9 +145,12 @@ class MainActivity : AppCompatActivity() {
             try {
                 val num1 = edit1.text.toString().toInt()
                 val num2 = edit2.text.toString().toInt()
-                textResult.setText("계산 결과: ${num1 / num2}")
+                val result = num1 / num2
+                textResult.setText("계산 결과: ${result}")
+                edit1.setText(result.toString())
+                edit2.setText("")
             } catch (e : Exception) {
-                false
+                textResult.setText("계산 결과: ")
             }
             false
         }
