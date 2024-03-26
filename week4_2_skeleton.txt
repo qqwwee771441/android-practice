@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    /////////////Todo///////////////
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Btn1"
+        android:text="Button1"
+        android:visibility="visible"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Btn2"
+        android:text="Button2"
+        android:visibility="invisible"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Btn3"
+        android:text="Button3"
+        android:visibility="invisible"/>
+</LinearLayout>
+
+package com.example.myapplication
+
+import android.graphics.Color
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.util.Log
+import android.view.View
+import android.widget.Button
+import android.widget.LinearLayout
+
+class MainActivity : AppCompatActivity() {
+    /////////////Todo///////////////
+    lateinit var btn1 : Button
+    lateinit var btn2 : Button
+    lateinit var btn3 : Button
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        title = "예제 2번"
+
+        btn1 = findViewById<Button>(R.id.Btn1)
+        btn2 = findViewById<Button>(R.id.Btn2)
+        btn3 = findViewById<Button>(R.id.Btn3)
+
+        btn1.setOnTouchListener{ view, motionEvent ->
+            /////////////Todo///////////////
+            btn1.visibility = View.INVISIBLE
+            btn2.visibility = View.VISIBLE
+            false
+        }
+        btn2.setOnTouchListener{ view, motionEvent ->
+            /////////////Todo///////////////
+            btn2.visibility = View.INVISIBLE
+            btn3.visibility = View.VISIBLE
+            false
+        }
+        btn3.setOnTouchListener{ view, motionEvent ->
+            /////////////Todo///////////////
+            btn3.visibility = View.INVISIBLE
+            btn1.visibility = View.VISIBLE
+            false
+        }
+    }
+}
