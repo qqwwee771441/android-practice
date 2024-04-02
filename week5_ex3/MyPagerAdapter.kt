@@ -18,9 +18,9 @@ class MyPagerAdapter(val datas: MutableList<String>) : RecyclerView.Adapter<Recy
         binding.itemPagerTextView.text = datas[position]
         when (position % 3) {
             // TODO : position에 따라 배경색 변경
-            0 -> binding.backgroundColor = "#FF0000"
-            1 -> binding.backgroundColor = "#00FF00"
-            2 -> binding.backgroundColor - "#0000FF"
+            0 -> binding.root.backgroundColor = "#FF0000"
+            1 -> binding.root.backgroundColor = "#00FF00"
+            2 -> binding.root.backgroundColor - "#0000FF"
         }
     }
 
