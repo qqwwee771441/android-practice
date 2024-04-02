@@ -1,4 +1,4 @@
-package com.example.week53
+package com.choi.myapplication
 
 import androidx.fragment.app.Fragment
 

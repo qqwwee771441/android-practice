@@ -1,4 +1,4 @@
-package com.example.week51
+package com.choi.myapplication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.Button
@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // TODO: FragmentManager 및 fragButton 변수 선언
-        val fragButton = findByViewId<Button>(R.id.fragBut1)
+        val fragButton = findViewById<Button>(R.id.fragBut1)
         val fragmentManager: FragmentManager = supportFragmentManager
 
         var onClicked = false

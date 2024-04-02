@@ -1,11 +1,11 @@
-package com.example.week55
+package com.choi.myapplication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.drawerlayout.widget.DrawerLayout
-import com.example.week55.databinding.ActivityMainBinding
+import com.choi.myapplication.databinding.ActivityMainBinding
 import androidx.viewpager2.widget.ViewPager2
 
 
@@ -17,14 +17,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         //TODO : viewpager 추가
-        binding.viewpager.adapter = MyPagerAdapter()
+        binding.viewpager.adapter = MyPagerAdapter(this)
         binding.viewpager.orientation = ViewPager2.ORIENTATION_HORIZONTAL
 
         //drawer 추가
         val drawer = findViewById<DrawerLayout>(R.id.drawer)
 
         //TODO : ActionBarDrawerToggle 추가
-        toggle = ActionBarDrawerToggle(this, binding.drawer, R.string.drawer)
+        toggle = ActionBarDrawerToggle(this, binding.drawer, R.string.drawer_opened, R.string.drawer_closed)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         toggle.syncState()
     }

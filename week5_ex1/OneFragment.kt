@@ -1,4 +1,4 @@
-package com.example.week51
+package com.choi.myapplication
 
 import android.os.Bundle
 import android.view.LayoutInflater

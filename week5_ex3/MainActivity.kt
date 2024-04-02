@@ -1,4 +1,4 @@
-package com.example.week53
+package com.choi.myapplication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,7 +6,7 @@ import android.telephony.PhoneStateListener
 import android.telephony.ServiceState
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
-import com.example.week53.databinding.ActivityMainBinding
+import com.choi.myapplication.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

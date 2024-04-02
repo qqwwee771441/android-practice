@@ -1,10 +1,10 @@
-package com.example.week55
+package com.choi.myapplication
 
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.week55.databinding.ItemMainBinding
+import com.choi.myapplication.databinding.ItemMainBinding
 
 //항목 뷰를 가지는 역할
 class MyViewHolder(val binding: ItemMainBinding): RecyclerView.ViewHolder(binding.root)

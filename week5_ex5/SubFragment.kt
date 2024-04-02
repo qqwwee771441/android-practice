@@ -1,4 +1,4 @@
-package com.example.week55
+package com.choi.myapplication
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -25,9 +25,9 @@ class SubFragment : Fragment() {
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView)
 
         // TODO: recyclerView의 layout manager, adapter, item decoration 설정
-        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.layoutManager = LinearLayoutManager(view.context)
         recyclerView.adapter = MyAdapter(datas)
-        recyclerView.addItemDecoration(DividerItemDecoration(this, LinearLayoutManager.VERTICAL))
+        recyclerView.addItemDecoration(DividerItemDecoration(view.context, LinearLayoutManager.VERTICAL))
 
         return view
     }

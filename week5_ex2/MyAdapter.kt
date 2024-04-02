@@ -1,10 +1,10 @@
-package com.example.week52
+package com.choi.myapplication
 
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.week52.databinding.ItemMainBinding
+import com.choi.myapplication.databinding.ItemMainBinding
 
 class MyViewHolder(val binding: ItemMainBinding): RecyclerView.ViewHolder(binding.root)
 
