@@ -1,5 +1,7 @@
-package com.example.a6_3
+package com.choi.myapplication
 
+import android.app.Activity
+import android.content.Intent
 import android.graphics.Bitmap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -24,7 +26,7 @@ class SubActivity : AppCompatActivity() {
         phone.text=intent.getStringExtra("phone")
         address.text=intent.getStringExtra("address")
         etc.text=intent.getStringExtra("etc")
-        val bitmap = intent.getParseableExtra("image", Bitmap::class.java)
+        val bitmap = intent.getParcelableExtra<Bitmap>("image")
         image.setImageBitmap(bitmap)
 
         btn_return.setOnClickListener {
@@ -35,7 +37,7 @@ class SubActivity : AppCompatActivity() {
 
         btn_change.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
-            setResult(Activity.RESULT_CANCEL, intent)
+            setResult(Activity.RESULT_CANCELED, intent)
             finish()
         }
 

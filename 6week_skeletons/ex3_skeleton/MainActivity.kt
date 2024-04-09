@@ -1,4 +1,4 @@
-package com.
+package com.choi.myapplication
 
 import android.app.Activity
 import android.content.Intent

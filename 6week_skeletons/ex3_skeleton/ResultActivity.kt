@@ -1,9 +1,8 @@
-package com.example.a6_3
+package com.choi.myapplication
 
 import android.graphics.Bitmap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -24,7 +23,7 @@ class ResultActivity : AppCompatActivity() {
         phone.text=intent.getStringExtra("phone")
         address.text=intent.getStringExtra("address")
         etc.text=intent.getStringExtra("etc")
-        val bitmap = intent.getParceableExtra("image", Bitmap::class.java)
+        val bitmap = intent.getParcelableExtra<Bitmap>("image")
         image.setImageBitmap(bitmap)
         Toast.makeText(applicationContext,"정상적으로 저장되었습니다",Toast.LENGTH_SHORT).show()
 
