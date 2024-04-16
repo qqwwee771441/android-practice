@@ -1,6 +1,6 @@
-package com.example.week9_3.retrofit
+package com.choi.myapplication.retrofit
 
-import com.example.week9_3.model.PageListModel
+import com.choi.myapplication.model.PageListModel
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query

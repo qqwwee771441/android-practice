@@ -1,8 +1,7 @@
-package com.example.week9_3
+package com.choi.myapplication
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,14 +11,10 @@ import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
-import com.example.week9_3.databinding.FragmentVolleyBinding
-import com.example.week9_3.model.ItemModel
-import com.example.week9_3.recycler.MyAdapter
-
+import com.choi.myapplication.databinding.FragmentVolleyBinding
+import com.choi.myapplication.model.ItemModel
+import com.choi.myapplication.recycler.MyAdapter
 import org.json.JSONObject
-import retrofit2.Call
-import retrofit2.http.GET
-import retrofit2.http.Query
 
 
 class VolleyFragment : Fragment() {
@@ -38,10 +33,22 @@ class VolleyFragment : Fragment() {
                 Request.Method.GET,
                 url,
                 null,
-                Response.Listener<JSONObject> {
-                "////////////todo////////////"
+                Response.Listener<JSONObject> { response ->
+                    val jsonArray = response.getJSONArray("articles")
+                    val mutableList = mutableListOf<ItemModel>()
+                    for (i in 0 until jsonArray.length()) {
+                        ItemModel().run {
+                            val article = jsonArray.getJSONObject(i)
+                            author = article.getString("author")
+                            title = article.getString("title")
+                            description = article.getString("description")
+                            urlToImage = article.getString("urlToImage")
+                            publishedAt = article.getString("publishedAt")
+                            mutableList.add(this)
+                        }
+                    }
                     binding.volleyRecyclerView.layoutManager = LinearLayoutManager(activity)
-                    binding.volleyRecyclerView.adapter = MyAdapter(activity as Context, response.body()?.articles)
+                    binding.volleyRecyclerView.adapter = MyAdapter(activity as Context, mutableList)
                 },
 
                 //Request 에러 처리

@@ -1,4 +1,4 @@
-package com.example.week9_2
+package com.choi.myapplication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,14 +6,12 @@ import android.app.DownloadManager
 import android.content.Context
 import android.net.Uri
 import android.os.Environment
-import android.util.Log
 import java.io.File
 import android.widget.Toast
 import android.content.Intent
 import android.content.BroadcastReceiver
 import android.content.IntentFilter
-import android.widget.Button
-import com.example.week9_2.databinding.ActivityMainBinding
+import com.choi.myapplication.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity() {
@@ -58,7 +56,6 @@ class MainActivity : AppCompatActivity() {
 
         //인텐트 필터 선언
         //리시버와 인텐트 필터 연결
-        "/////////todo///////////"
         val intentFilter = IntentFilter()
         intentFilter.addAction(DownloadManager.ACTION_DOWNLOAD_COMPLETE)
         intentFilter.addAction(DownloadManager.ACTION_NOTIFICATION_CLICKED)
@@ -70,7 +67,6 @@ class MainActivity : AppCompatActivity() {
 
             //다운받을 Url 주소
             val downloadUrl = "https://cse.pusan.ac.kr/sites/cse/download/cse_newsletter_vol_13_1.pdf"
-            "/////////todo//////////"
             val request = DownloadManager.Request(Uri.parse(downloadUrl))
                 .setTitle("Downloading a file")
                 .setDescription("Downloading CSE Newsletter")
@@ -84,9 +80,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.cancelBtn.setOnClickListener {
-            "/////////todo//////////"
             onDestroy()
-            }
         }
     }
 

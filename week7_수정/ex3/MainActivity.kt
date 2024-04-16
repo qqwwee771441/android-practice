@@ -1,9 +1,9 @@
-package com.example.stopwatch
+package com.choi.myapplication
 
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.stopwatch.databinding.ActivityMainBinding
+import com.choi.myapplication.databinding.ActivityMainBinding
 import kotlinx.coroutines.*
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.channels.consumeEach
@@ -30,35 +30,42 @@ class MainActivity : AppCompatActivity() {
         binding.stop.setOnClickListener {
             "///////todo////////"
             if (isrunning) {
+                isrunning=false
                 h = 0
                 m = 0
                 s = 0
-                binding.resultView.text = "$h:$m:$s"
-                isrunning=false
+                binding.time.text = "00:00:00"
+            } else {
+                Toast.makeText(this,"Stopwatch is stopped now!!", Toast.LENGTH_SHORT).show()
             }
         }
         binding.pause.setOnClickListener {
             "///////todo////////"
-            if (!isPause) {
-                isPause=true
+            if (!ispause) {
+                ispause=true
+            } else {
+                Toast.makeText(this,"Stopwatch is paused now!!", Toast.LENGTH_SHORT).show()
             }
         }
         binding.resume.setOnClickListener {
             "///////todo////////"
-            if (isPause) {
-                isPause=false
+            if (ispause) {
+                ispause=false
+            } else {
+                Toast.makeText(this,"Stopwatch is not paused now!!", Toast.LENGTH_SHORT).show()
             }
         }
         val subScope = CoroutineScope(Dispatchers.Default + Job())
         subScope.launch {
             "///////todo////////"
             while (true) {
-                while (isrunning && !ispause) {
+
                     try {
                         delay(1000)
                     } catch (e: InterruptedException) {
                         e.printStackTrace()
                     }
+                    if (!isrunning || ispause) continue
                     s += 1
                     if (s == 60) {
                         s = 0
@@ -68,8 +75,8 @@ class MainActivity : AppCompatActivity() {
                             h += 1
                         }
                     }
-                    channel.send("$h:$m:$s")
-                }
+                    channel.send(String.format("%02d", h) + ":" + String.format("%02d", m) + ":" + String.format("%02d", s))
+
             }
         }
         var mainScope = GlobalScope.launch(Dispatchers.Main) {

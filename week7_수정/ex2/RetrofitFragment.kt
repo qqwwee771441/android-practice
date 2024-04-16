@@ -1,4 +1,4 @@
-package com.example.week9_3
+package com.choi.myapplication
 
 import android.content.Context
 import android.os.Bundle
@@ -7,9 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.week9_3.databinding.FragmentRetrofitBinding
-import com.example.week9_3.model.PageListModel
-import com.example.week9_3.recycler.MyAdapter
+import com.choi.myapplication.databinding.FragmentRetrofitBinding
+import com.choi.myapplication.model.PageListModel
+import com.choi.myapplication.recycler.MyAdapter
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

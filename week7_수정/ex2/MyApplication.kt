@@ -1,8 +1,8 @@
-package com.example.week9_3
+package com.choi.myapplication
 
 import android.app.Application
 //import com.android.volley.toolbox.Volley
-import com.example.week9_3.retrofit.NetworkService
+import com.choi.myapplication.retrofit.NetworkService
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

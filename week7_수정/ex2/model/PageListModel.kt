@@ -1,4 +1,4 @@
-package com.example.week9_3.model
+package com.choi.myapplication.model
 
 //콜백 결과 데이터 정의
 class PageListModel {

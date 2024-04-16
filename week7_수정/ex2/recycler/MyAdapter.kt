@@ -1,12 +1,12 @@
-package com.example.week9_3.recycler
+package com.choi.myapplication.recycler
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.week9_3.databinding.ItemMainBinding
-import com.example.week9_3.model.ItemModel
+import com.choi.myapplication.databinding.ItemMainBinding
+import com.choi.myapplication.model.ItemModel
 
 
 class MyViewHolder(val binding: ItemMainBinding): RecyclerView.ViewHolder(binding.root)
@@ -27,10 +27,7 @@ class MyAdapter(val context: Context, val datas: MutableList<ItemModel>?):
 
         //Glide 활용
         Glide.with(context)
-            "/////////todo/////////"
             .load(model.urlToImage)
-            .placeholder(R.drawable.loading)
-            .error(R.drawable.error)
             .into(binding.itemImage)
     }
 }

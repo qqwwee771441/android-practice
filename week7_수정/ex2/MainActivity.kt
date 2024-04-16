@@ -1,10 +1,10 @@
-package com.example.week9_3
+package com.choi.myapplication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import com.example.week9_3.databinding.ActivityMainBinding
+import com.choi.myapplication.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
