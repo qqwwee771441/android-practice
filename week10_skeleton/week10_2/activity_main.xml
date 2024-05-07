@@ -7,52 +7,78 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/posterImageView"
-        android:layout_width="120dp"
-        android:layout_height="160dp"
-        app:srcCompat="@drawable/dd" />
-
-    <!--    TODO : 영화제목, 상영시각, 주연, 시놉시스를 TextView에 입력 -->
-    <TextView
-        android:id="@+id/input1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/name" />
-    <TextView
-        android:id="@+id/input2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/reserved_time" />
-    <TextView
-        android:id="@+id/input3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/director" />
-    <TextView
-        android:id="@+id/input4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/synopsis" />
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:layout_height="104dp"
+        tools:context=".MainActivity"
+        android:orientation="vertical">
 
-        <Button
-            android:id="@+id/savebutton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="예약하기" />
-
-        <Button
-            android:id="@+id/viewbutton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="예약정보 보기" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            tools:context=".MainActivity"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/doButton1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="DB 생성" />
+            <!-- TODO : Button 추가-->
+            <Button
+                android:id="@+id/doButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TB 생성" />
+            <Button
+                android:id="@+id/doButton3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="DATA 추가" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            tools:context=".MainActivity"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/doButton4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="DATA 갱신" />
+            <Button
+                android:id="@+id/doButton5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="DATA 조회" />
+            <Button
+                android:id="@+id/doButton6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="DATA 제거" />
+        </LinearLayout>
     </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#03A9F4">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/output1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
