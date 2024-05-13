@@ -1,0 +1,15 @@
+<activity android:name=".draw.DrawActivity"></activity>
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url = uri("https://jitpack.io") }
+    }
+}
+
+implementation 'com.github.divyanshub024:AndroidDraw:v0.1'
+implementation 'org.tensorflow:tensorflow-lite:2.7.0'
+implementation 'org.tensorflow:tensorflow-lite-support:0.3.0'
+
+android.enableJetifier=true
